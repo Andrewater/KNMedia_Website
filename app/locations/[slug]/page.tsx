@@ -23,7 +23,16 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   return {
     title: location.name,
-    description: `Preview the ${location.name} billboard location by KN Media.`,
+    description: `Preview KN Media billboard availability at ${location.name}, ${location.area}. Close to ${location.nearby.join(", ")}.`,
+    alternates: {
+      canonical: `/locations/${location.slug}`,
+    },
+    openGraph: {
+      title: `${location.name} | KN Media`,
+      description: `Preview this KN Media billboard location near ${location.nearby.join(", ")}.`,
+      images: [location.image],
+      type: "website",
+    },
   };
 }
 
@@ -37,6 +46,22 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
   return (
     <main className="detail-page" id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Place",
+            name: location.name,
+            address: location.area,
+            image: location.image,
+            amenityFeature: location.nearby.map((place) => ({
+              "@type": "LocationFeatureSpecification",
+              name: `Close to ${place}`,
+            })),
+          }),
+        }}
+      />
       <section className="detail-hero">
         <LocationVisual location={location} detail active />
         <div className="detail-copy">

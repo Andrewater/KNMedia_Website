@@ -14,6 +14,9 @@ function getSiteUrl() {
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "KN Media | Billboard Locations",
     template: "%s | KN Media",
@@ -22,14 +25,37 @@ export const metadata: Metadata = {
   openGraph: {
     title: "KN Media | Billboard Locations",
     description: "A location-first preview of KN Media billboard sites.",
+    url: "/",
+    siteName: "KN Media",
+    images: ["/assets/img/og-preview.svg"],
+    locale: "en_NZ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KN Media | Billboard Locations",
+    description: "A location-first preview of KN Media billboard sites.",
     images: ["/assets/img/og-preview.svg"],
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const siteUrl = getSiteUrl();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "KN Media",
+    url: siteUrl,
+    email: "hello@knmedia.co.id",
+    telephone: "+642102831862",
+    areaServed: ["Auckland", "Christchurch", "New Zealand"],
+    serviceType: "Street billboard advertising",
+  };
+
   return (
     <html lang="en">
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <a className="skip-link" href="#main">
           Skip to content
         </a>

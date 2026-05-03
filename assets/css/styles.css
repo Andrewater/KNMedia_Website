@@ -1013,8 +1013,12 @@ button {
   }
 
   .location-link {
-    min-height: 22svh;
-    padding-block: clamp(2.5rem, 12vw, 4rem);
+    min-height: auto;
+    padding: clamp(1.15rem, 4vw, 1.65rem);
+  }
+
+  .location-mobile-image {
+    display: none;
   }
 
   .location-name {
@@ -1042,8 +1046,13 @@ button {
 
   .detail-visual {
     position: relative;
-    height: 54svh;
-    min-height: 24rem;
+    height: 46svh;
+    min-height: 19rem;
+    background-position: center top;
+  }
+
+  .detail-visual.is-white {
+    background-position: center top;
   }
 
   .preview-title {

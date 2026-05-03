@@ -1427,11 +1427,11 @@ button {
 
   .location-link {
     display: grid;
-    grid-template-columns: minmax(8.5rem, 40vw) minmax(0, 1fr);
-    gap: clamp(0.85rem, 3.4vw, 1.2rem);
+    grid-template-columns: 1fr;
+    gap: 0;
     min-height: 0;
-    align-items: stretch;
-    padding: clamp(1rem, 4vw, 1.45rem);
+    align-items: center;
+    padding: clamp(1.15rem, 4vw, 1.65rem);
     background: var(--white);
     color: var(--ink);
     border-bottom: 1px solid var(--line);
@@ -1448,16 +1448,7 @@ button {
   }
 
   .location-mobile-image {
-    position: relative;
-    display: block;
-    min-height: clamp(9.5rem, 36vw, 16rem);
-    overflow: hidden;
-    background:
-      linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.52)),
-      var(--location-image),
-      #f2f2f2;
-    background-position: center;
-    background-size: cover;
+    display: none;
   }
 
   .location-mobile-image span {
@@ -1467,7 +1458,7 @@ button {
   .location-copy {
     align-content: center;
     gap: 0.38rem;
-    min-height: clamp(9.5rem, 36vw, 16rem);
+    min-height: 0;
   }
 
   .location-name {
@@ -1540,8 +1531,13 @@ button {
 
   .detail-visual {
     position: relative;
-    height: 54svh;
-    min-height: 24rem;
+    height: 46svh;
+    min-height: 19rem;
+    background-position: center top;
+  }
+
+  .detail-visual.is-white {
+    background-position: center top;
   }
 
   .preview-title {
@@ -1586,16 +1582,12 @@ button {
     grid-template-columns: 1fr;
     min-height: auto;
     gap: 0;
-    padding: 0;
-  }
-
-  .location-mobile-image {
-    min-height: 42svh;
+    padding: 1rem 1.15rem 1.15rem;
   }
 
   .location-copy {
     min-height: 0;
-    padding: 1rem 1.15rem 1.15rem;
+    padding: 0;
   }
 
   .location-name {
