@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | KN Media</title>
+    <meta name="description" content="Contact KN Media to ask about billboard location availability.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand-logo" href="index.html" aria-label="KN Media home">
+        <img src="assets/img/kn-media-wordmark.svg" alt="KN Media">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <aside class="site-menu" id="site-menu" aria-hidden="true">
+      <button class="menu-scrim" type="button" data-close-menu aria-label="Close menu"></button>
+      <nav class="menu-panel" aria-label="Site menu">
+        <button class="menu-close" type="button" data-close-menu>Close</button>
+        <a href="index.html#locations" data-close-menu>Locations</a>
+        <a href="about.html" data-close-menu>About</a>
+        <a href="contact.html" data-close-menu>Contact</a>
+      </nav>
+    </aside>
+
+    <main class="contact-layout-page">
+      <section class="contact-card" aria-labelledby="contact-title">
+        <div class="contact-intro">
+          <h1 id="contact-title">have a question?</h1>
+          <p>
+            We are here to help. Fill out the form or reach out directly and the KN Media team will get back to you.
+          </p>
+          <div class="contact-list">
+            <a href="tel:+6281200000000">+62 812 0000 0000</a>
+            <a href="mailto:hello@knmedia.co.id">hello@knmedia.co.id</a>
+          </div>
+        </div>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label>
+              First Name
+              <input type="text" name="first-name" autocomplete="given-name" required>
+            </label>
+            <label>
+              Last Name
+              <input type="text" name="last-name" autocomplete="family-name" required>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+          </div>
+          <label>
+            Inquiry Type
+            <select name="inquiry-type">
+              <option>Brand campaign</option>
+              <option>Location availability</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="6"></textarea>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>KN Media</span>
+      <span>Auckland & Christchurch, New Zealand</span>
+      <span>© 2026</span>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
