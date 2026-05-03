@@ -1543,8 +1543,8 @@ button {
     position: relative;
     height: auto;
     min-height: 0;
-    aspect-ratio: 4 / 3;
-    min-height: 15rem;
+    aspect-ratio: 3 / 4;
+    min-height: 26rem;
     background-position: center 38%;
   }
 
@@ -1553,13 +1553,18 @@ button {
   }
 
   .preview-title {
-    top: auto;
-    bottom: clamp(1.2rem, 5vw, 1.8rem);
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .detail-visual .preview-title {
+    transform: translateY(-50%);
   }
 
   .preview-title h2 {
     max-width: 13ch;
-    font-size: clamp(1.65rem, 7.2vw, 2.7rem);
+    font-size: clamp(1.9rem, 8.4vw, 3.2rem);
   }
 
   .detail-visual .preview-details {
