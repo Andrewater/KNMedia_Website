@@ -11,7 +11,6 @@ type LocationBrowserProps = {
 };
 
 export function LocationBrowser({ locations }: LocationBrowserProps) {
-  const firstImage = locations[0]?.image ?? "";
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
 
   return (
@@ -19,11 +18,10 @@ export function LocationBrowser({ locations }: LocationBrowserProps) {
       <div className="preview-pane" aria-hidden="true">
         <div
           className={`preview-empty ${activeSlug ? "is-muted" : ""}`}
-          style={{ "--location-image": `url(${firstImage})` } as CSSProperties}
         >
           <div className="preview-hero-copy">
             <p className="kicker">KN Media</p>
-            <h2>Premium billboards for New Zealand and Australian businesses.</h2>
+            <h1>Premium billboards for New Zealand and Australian businesses.</h1>
           </div>
         </div>
         {locations.map((location) => (

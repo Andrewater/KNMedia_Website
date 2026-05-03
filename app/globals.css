@@ -297,12 +297,11 @@ button {
   justify-items: start;
   align-items: center;
   padding: clamp(2rem, 6vw, 4.5rem) clamp(1rem, 3vw, 2rem) clamp(2rem, 6vw, 4.5rem) clamp(2rem, 6vw, 4.5rem);
-  color: var(--white);
+  color: var(--red);
   background:
-    linear-gradient(90deg, rgba(255,49,49,0.74), rgba(255,49,49,0.22) 48%, rgba(0,0,0,0.18)),
-    linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.52)),
-    var(--location-image),
-    var(--red);
+    linear-gradient(90deg, rgba(255,255,255,0.92), rgba(255,255,255,0.58) 45%, rgba(255,255,255,0.18)),
+    url("/assets/img/snowy-mountain.svg"),
+    #f4fbff;
   background-position: center;
   background-size: cover;
   transition: opacity 360ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1), filter 520ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -328,7 +327,7 @@ button {
   display: none;
 }
 
-.preview-hero-copy h2 {
+.preview-hero-copy h1 {
   margin: 0;
   max-width: 24ch;
   font-family: var(--sans);
@@ -713,6 +712,11 @@ button {
   width: clamp(14rem, 23vw, 20rem);
 }
 
+.logo-item-wide img {
+  max-width: 90%;
+  max-height: 92%;
+}
+
 .logo-item img {
   display: block;
   width: 100%;
@@ -1043,6 +1047,142 @@ button {
   animation: card-rise 640ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.instagram-section {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.48fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  width: min(72rem, calc(100% - 2rem));
+  justify-self: center;
+  align-items: start;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.instagram-heading {
+  position: sticky;
+  top: calc(var(--nav-h) + 1.5rem);
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+}
+
+.instagram-heading .kicker {
+  margin-bottom: 0;
+  color: var(--red);
+}
+
+.instagram-heading h2 {
+  margin: 0;
+  max-width: 8ch;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: clamp(2rem, 4vw, 4.1rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.instagram-heading a {
+  width: max-content;
+  color: var(--red);
+  border-bottom: 2px solid currentColor;
+  font-size: 0.95rem;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.55rem, 1.4vw, 0.9rem);
+}
+
+.instagram-post {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: #f1f1f1;
+  border: 1px solid var(--line);
+  isolation: isolate;
+}
+
+.instagram-post::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(21, 21, 21, 0), rgba(21, 21, 21, 0.62));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.instagram-post img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.instagram-post span {
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.8rem;
+  z-index: 2;
+  color: var(--white);
+  font-size: 0.78rem;
+  line-height: 1.15;
+  opacity: 0;
+  transform: translateY(0.35rem);
+  transition: opacity 220ms ease, transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.instagram-post:hover img,
+.instagram-post:focus-visible img {
+  transform: scale(1.045);
+}
+
+.instagram-post:hover::after,
+.instagram-post:focus-visible::after,
+.instagram-post:hover span,
+.instagram-post:focus-visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.instagram-grid-empty {
+  counter-reset: instagram-empty;
+}
+
+.instagram-post-empty {
+  display: grid;
+  place-items: end start;
+  padding: 0.85rem;
+  background:
+    linear-gradient(135deg, rgba(255, 49, 49, 0.9), rgba(21, 21, 21, 0.96)),
+    var(--red);
+}
+
+.instagram-post-empty::before {
+  counter-increment: instagram-empty;
+  content: "0" counter(instagram-empty);
+  position: absolute;
+  top: 0.7rem;
+  right: 0.75rem;
+  color: rgba(255, 255, 255, 0.36);
+  font-size: 0.74rem;
+}
+
+.instagram-post-empty span {
+  position: static;
+  color: var(--white);
+  opacity: 1;
+  transform: none;
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
 @keyframes card-rise {
   from {
     opacity: 0;
@@ -1187,6 +1327,7 @@ button {
   .contact-strip,
   .content-grid,
   .contact-card,
+  .instagram-section,
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1300,6 +1441,18 @@ button {
 
   .contact-strip-actions {
     gap: 0.75rem;
+  }
+
+  .instagram-heading {
+    position: static;
+  }
+
+  .instagram-heading h2 {
+    max-width: 12ch;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-strip .cta-button {
@@ -1421,6 +1574,15 @@ button {
 
   .logo-item-wide {
     width: 13rem;
+  }
+
+  .instagram-section {
+    width: min(100% - 1rem, 38rem);
+    padding: 1rem;
+  }
+
+  .instagram-grid {
+    gap: 0.5rem;
   }
 }
 

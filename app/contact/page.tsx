@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
+import { InstagramFeed } from "@/components/InstagramFeed";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function ContactPage() {
 
         <ContactForm />
       </section>
+      <InstagramFeed />
       <SiteFooter />
     </main>
   );

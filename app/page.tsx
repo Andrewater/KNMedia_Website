@@ -7,7 +7,6 @@ import { locations } from "@/lib/locations";
 export default function HomePage() {
   return (
     <main className="home-page" id="main">
-      <h1 className="sr-only">KN Media Billboard Locations</h1>
       <LocationBrowser locations={locations} />
       <LogoCarousel />
 

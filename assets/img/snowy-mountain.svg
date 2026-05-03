@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Snowy mountain range</title>
+  <desc id="desc">A crisp snowy mountain background with pale blue sky and layered alpine peaks.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#eaf8ff"/>
+      <stop offset="0.48" stop-color="#f8fdff"/>
+      <stop offset="1" stop-color="#d8edf6"/>
+    </linearGradient>
+    <linearGradient id="shadow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#b7d2df"/>
+      <stop offset="1" stop-color="#eef8fb"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fbfd"/>
+      <stop offset="1" stop-color="#cfe4ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#sky)"/>
+  <circle cx="1268" cy="206" r="88" fill="#fff7d6" opacity=".75"/>
+  <path d="M0 766 236 506 392 638 594 328 802 626 1012 250 1216 594 1375 448 1600 716v384H0z" fill="#d5eaf2"/>
+  <path d="M0 806 252 512l140 126 202-310 80 116-129 68 257 114 210-376 204 344 159-146 225 268v384H0z" fill="url(#ridge)"/>
+  <path d="M594 328 491 556 674 444zM1012 250 888 618l328-24zM252 512 131 730l261-92z" fill="#ffffff"/>
+  <path d="M674 444 802 626 545 512zM1216 594 1012 250l113 363zM392 638 252 512l229 44z" fill="url(#shadow)" opacity=".86"/>
+  <path d="M0 852c178-54 338-72 480-54 155 20 257 76 412 80 169 4 252-52 407-48 99 3 200 30 301 82v188H0z" fill="#ffffff" opacity=".72"/>
+  <path d="M0 924c178-39 351-44 520-16 134 22 250 54 392 56 214 3 327-65 494-45 65 8 129 27 194 58v123H0z" fill="#f8fdff"/>
+</svg>
