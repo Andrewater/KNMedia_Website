@@ -16,14 +16,6 @@ export function LocationBrowser({ locations }: LocationBrowserProps) {
   return (
     <section className="location-browser" id="locations" aria-label="KN Media billboard locations">
       <div className="preview-pane" aria-hidden="true">
-        <div
-          className={`preview-empty ${activeSlug ? "is-muted" : ""}`}
-        >
-          <div className="preview-hero-copy">
-            <p className="kicker">KN Media</p>
-            <h1>Premium billboards for New Zealand and Australian businesses.</h1>
-          </div>
-        </div>
         {locations.map((location) => (
           <LocationVisual key={location.slug} location={location} active={activeSlug === location.slug} />
         ))}

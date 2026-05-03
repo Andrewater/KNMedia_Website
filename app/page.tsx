@@ -7,6 +7,13 @@ import { locations } from "@/lib/locations";
 export default function HomePage() {
   return (
     <main className="home-page" id="main">
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="home-hero-copy">
+          <p className="kicker">KN Media</p>
+          <h1 id="home-title">Premium billboards for New Zealand and Australian businesses.</h1>
+          <Link className="cta-button" href="/contact">Enquire now</Link>
+        </div>
+      </section>
       <LocationBrowser locations={locations} />
       <LogoCarousel />
 
