@@ -1537,8 +1537,8 @@ button {
 
   .detail-visual {
     position: relative;
-    height: 46svh;
-    min-height: 19rem;
+    height: 40svh;
+    min-height: 17rem;
     background-position: center top;
   }
 
@@ -1547,17 +1547,42 @@ button {
   }
 
   .preview-title {
-    top: 24%;
+    top: clamp(1.6rem, 7vw, 2.6rem);
   }
 
   .preview-title h2 {
-    max-width: 12ch;
-    font-size: clamp(2rem, 9vw, 3.8rem);
+    max-width: 13ch;
+    font-size: clamp(1.85rem, 8vw, 3.25rem);
   }
 
   .preview-details {
-    bottom: clamp(1.5rem, 5vh, 3rem);
+    bottom: clamp(1.35rem, 4vh, 2.4rem);
     grid-template-columns: 1fr;
+    gap: 0.28rem;
+  }
+
+  .preview-details strong,
+  .preview-details span {
+    font-size: 0.82rem;
+  }
+
+  .detail-copy {
+    gap: 0.8rem;
+    padding: clamp(1.6rem, 6vw, 2.4rem) clamp(1.25rem, 6vw, 2rem) clamp(2rem, 7vw, 2.8rem);
+  }
+
+  .detail-copy .district {
+    font-size: clamp(1.35rem, 6vw, 2.2rem);
+  }
+
+  .detail-list {
+    gap: 0.45rem;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+  }
+
+  .back-link {
+    margin-top: 1rem;
   }
 }
 
@@ -1609,8 +1634,9 @@ button {
   .contact-strip h1,
   .contact-strip h2,
   .detail-copy h1 {
-    font-size: clamp(2.6rem, 12vw, 4.4rem);
-    line-height: 0.9;
+    max-width: 11ch;
+    font-size: clamp(2.2rem, 10.5vw, 3.55rem);
+    line-height: 0.92;
   }
 
   .contact-strip .cta-button {
