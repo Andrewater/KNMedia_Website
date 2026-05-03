@@ -11,7 +11,7 @@ export default function AboutPage() {
     <main className="content-page" id="main">
       <section className="content-hero">
         <p className="kicker">About</p>
-        <h1>Premium Outdoor Advertising for New Zealand and Australian-Based Businesses</h1>
+        <h1>NZ’s Fasting Growing Street Billboard Company</h1>
         <p>
           Framed, gallery-quality A0 posters hung exclusively in affluent, high-traffic locations across Auckland and
           Christchurch. No clutter. No cheap corners. Just premium physical media for brands that serve discerning

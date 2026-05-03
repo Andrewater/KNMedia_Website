@@ -1,3 +1,5 @@
+import { manualInstagramPosts } from "@/lib/instagram-posts";
+
 type InstagramMedia = {
   id: string;
   caption?: string;
@@ -61,6 +63,7 @@ function getPostLabel(post: InstagramMedia) {
 export async function InstagramFeed() {
   const posts = await getInstagramPosts();
   const fallbackTiles = Array.from({ length: 6 }, (_, index) => index + 1);
+  const manualPosts = manualInstagramPosts.slice(0, 6);
 
   return (
     <section className="instagram-section" aria-labelledby="instagram-title">
@@ -84,6 +87,15 @@ export async function InstagramFeed() {
               </a>
             );
           })}
+        </div>
+      ) : manualPosts.length > 0 ? (
+        <div className="instagram-grid">
+          {manualPosts.map((post) => (
+            <a className="instagram-post" href={post.permalink} target="_blank" rel="noreferrer" key={post.id}>
+              <img src={post.imageUrl} alt={post.alt} loading="lazy" />
+              <span>View on Instagram</span>
+            </a>
+          ))}
         </div>
       ) : (
         <div className="instagram-grid instagram-grid-empty" aria-label="Instagram feed preview">

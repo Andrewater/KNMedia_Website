@@ -270,63 +270,6 @@ button {
   padding-top: var(--nav-h);
 }
 
-.home-hero {
-  display: grid;
-  align-items: center;
-  min-height: calc(100svh - var(--nav-h));
-  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 6vw, 5rem);
-  color: var(--red);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.92), rgba(255,255,255,0.58) 45%, rgba(255,255,255,0.18)),
-    url("/assets/img/snowy-mountain.svg"),
-    #f4fbff;
-  background-position: center;
-  background-size: cover;
-}
-
-.home-hero-copy {
-  display: grid;
-  justify-items: start;
-  gap: clamp(1.1rem, 2vw, 1.5rem);
-  max-width: 48rem;
-}
-
-.home-hero-copy .kicker {
-  display: none;
-}
-
-.home-hero-copy h1 {
-  margin: 0;
-  max-width: 24ch;
-  font-family: var(--sans);
-  font-size: clamp(2rem, 3.75vw, 4.1rem);
-  font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.home-hero .cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3.35rem;
-  padding: 0 1.35rem;
-  background: var(--red);
-  color: var(--white);
-  border: 2px solid var(--red);
-  font-weight: 900;
-  text-transform: uppercase;
-  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
-}
-
-.home-hero .cta-button:hover,
-.home-hero .cta-button:focus-visible {
-  transform: translateY(-2px);
-  background: transparent;
-  color: var(--red);
-}
-
 .location-browser {
   display: grid;
   grid-template-columns: minmax(24rem, 59vw) minmax(22rem, 41vw);
@@ -342,11 +285,81 @@ button {
   background: var(--night);
 }
 
+.preview-empty,
 .preview-card {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
+}
+
+.preview-empty {
+  justify-items: start;
+  align-items: center;
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1rem, 3vw, 2rem) clamp(2rem, 6vw, 4.5rem) clamp(2rem, 6vw, 4.5rem);
+  color: var(--red);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.92), rgba(255,255,255,0.58) 45%, rgba(255,255,255,0.18)),
+    url("/assets/img/snowy-mountain.svg"),
+    #f4fbff;
+  background-position: center;
+  background-size: cover;
+  transition: opacity 360ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1), filter 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preview-empty.is-muted {
+  opacity: 0;
+  transform: scale(1.015);
+  filter: blur(2px);
+}
+
+.preview-hero-copy {
+  display: grid;
+  justify-items: start;
+  gap: clamp(1.1rem, 2vw, 1.5rem);
+  max-width: 48rem;
+  transform: translateY(0);
+  transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preview-empty.is-muted .preview-hero-copy {
+  transform: translateY(0.8rem);
+}
+
+.preview-hero-copy .kicker {
+  display: none;
+}
+
+.preview-hero-copy h1 {
+  margin: 0;
+  max-width: 24ch;
+  font-family: var(--sans);
+  font-size: clamp(2rem, 3.75vw, 4.1rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.preview-hero-copy .cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.35rem;
+  padding: 0 1.35rem;
+  background: var(--red);
+  color: var(--white);
+  border: 2px solid var(--red);
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.preview-hero-copy .cta-button:hover,
+.preview-hero-copy .cta-button:focus-visible {
+  transform: translateY(-2px);
+  background: transparent;
+  color: var(--red);
 }
 
 .preview-card {
@@ -1060,7 +1073,7 @@ button {
   display: grid;
   grid-template-columns: minmax(14rem, 0.62fr) minmax(22rem, 1.38fr);
   gap: clamp(1.5rem, 4vw, 3rem);
-  width: min(62rem, calc(100% - 2rem));
+  width: min(72rem, calc(100% - 2rem));
   justify-self: center;
   padding: clamp(1.25rem, 3vw, 2rem);
   background: var(--white);
@@ -1355,7 +1368,30 @@ button {
   }
 
   .preview-pane {
+    position: relative;
+    top: auto;
+    display: block;
+    height: 60svh;
+    min-height: 24rem;
+  }
+
+  .preview-card {
     display: none;
+  }
+
+  .preview-empty {
+    padding: 2rem 1.25rem;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .preview-hero-copy {
+    justify-items: center;
+    max-width: min(34rem, 100%);
+  }
+
+  .preview-hero-copy h1 {
+    font-size: clamp(2rem, 7vw, 3.45rem);
   }
 
   .location-list {
@@ -1459,7 +1495,7 @@ button {
 
   .logo-carousel-copy h2 {
     max-width: 22ch;
-    font-size: clamp(2rem, 8vw, 3.45rem);
+    font-size: clamp(1.6rem, 6.4vw, 2.75rem);
   }
 
   .contact-strip-actions {
