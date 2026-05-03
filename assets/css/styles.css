@@ -486,12 +486,12 @@ button {
 }
 
 .logo-carousel-copy h2 {
-  max-width: 48rem;
+  max-width: 18ch;
   margin: 0;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: clamp(0.95rem, 1.35vw, 1.32rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 3.75vw, 4.1rem);
+  line-height: 0.92;
   text-transform: uppercase;
 }
 
@@ -552,6 +552,16 @@ button {
 .logo-item-wide img {
   max-width: 90%;
   max-height: 92%;
+}
+
+.logo-item-small img {
+  max-width: 68%;
+  max-height: 76%;
+}
+
+.logo-item-medium img {
+  max-width: 76%;
+  max-height: 82%;
 }
 
 .logo-item img {
