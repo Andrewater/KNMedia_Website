@@ -1357,6 +1357,10 @@ button {
     --nav-h: 72px;
   }
 
+  .detail-page {
+    padding-top: 0;
+  }
+
   .location-browser,
   .detail-hero,
   .contact-strip,
