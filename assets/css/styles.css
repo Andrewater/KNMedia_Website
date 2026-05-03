@@ -1050,8 +1050,9 @@ button {
 
   .detail-visual {
     position: relative;
-    height: 34svh;
-    min-height: 15rem;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
     background-position: center 38%;
   }
 
@@ -1075,7 +1076,10 @@ button {
 
   .detail-copy {
     gap: 0.8rem;
-    padding: clamp(1.35rem, 5vw, 2rem) clamp(1.25rem, 6vw, 2rem) clamp(2rem, 7vw, 2.8rem);
+    position: relative;
+    z-index: 3;
+    padding: clamp(1.25rem, 5vw, 1.85rem) clamp(1.25rem, 6vw, 2rem) clamp(2rem, 7vw, 2.8rem);
+    background: var(--white);
   }
 
   .detail-copy .district {
@@ -1118,9 +1122,7 @@ button {
 
   .contact-strip h1,
   .detail-copy h1 {
-    max-width: 13ch;
-    font-size: clamp(2rem, 9.2vw, 3.05rem);
-    line-height: 0.92;
+    display: none;
   }
 
   .footer {
