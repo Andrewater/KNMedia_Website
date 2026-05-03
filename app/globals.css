@@ -1537,38 +1537,32 @@ button {
 
   .detail-visual {
     position: relative;
-    height: 40svh;
-    min-height: 17rem;
-    background-position: center top;
+    height: 34svh;
+    min-height: 15rem;
+    background-position: center 38%;
   }
 
   .detail-visual.is-white {
-    background-position: center top;
+    background-position: center 38%;
   }
 
   .preview-title {
-    top: clamp(1.6rem, 7vw, 2.6rem);
+    top: auto;
+    bottom: clamp(1.2rem, 5vw, 1.8rem);
   }
 
   .preview-title h2 {
     max-width: 13ch;
-    font-size: clamp(1.85rem, 8vw, 3.25rem);
+    font-size: clamp(1.65rem, 7.2vw, 2.7rem);
   }
 
-  .preview-details {
-    bottom: clamp(1.35rem, 4vh, 2.4rem);
-    grid-template-columns: 1fr;
-    gap: 0.28rem;
-  }
-
-  .preview-details strong,
-  .preview-details span {
-    font-size: 0.82rem;
+  .detail-visual .preview-details {
+    display: none;
   }
 
   .detail-copy {
     gap: 0.8rem;
-    padding: clamp(1.6rem, 6vw, 2.4rem) clamp(1.25rem, 6vw, 2rem) clamp(2rem, 7vw, 2.8rem);
+    padding: clamp(1.35rem, 5vw, 2rem) clamp(1.25rem, 6vw, 2rem) clamp(2rem, 7vw, 2.8rem);
   }
 
   .detail-copy .district {
@@ -1634,8 +1628,8 @@ button {
   .contact-strip h1,
   .contact-strip h2,
   .detail-copy h1 {
-    max-width: 11ch;
-    font-size: clamp(2.2rem, 10.5vw, 3.55rem);
+    max-width: 13ch;
+    font-size: clamp(2rem, 9.2vw, 3.05rem);
     line-height: 0.92;
   }
 
