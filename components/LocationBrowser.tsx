@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Location } from "@/lib/locations";
 import { LocationVisual } from "./LocationVisual";
 
@@ -12,6 +12,34 @@ type LocationBrowserProps = {
 
 export function LocationBrowser({ locations }: LocationBrowserProps) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const [canPreviewLocations, setCanPreviewLocations] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 901px)");
+    const syncPreviewMode = () => {
+      setCanPreviewLocations(query.matches);
+      if (!query.matches) {
+        setActiveSlug(null);
+      }
+    };
+
+    syncPreviewMode();
+    query.addEventListener("change", syncPreviewMode);
+
+    return () => query.removeEventListener("change", syncPreviewMode);
+  }, []);
+
+  function previewLocation(slug: string) {
+    if (canPreviewLocations) {
+      setActiveSlug(slug);
+    }
+  }
+
+  function clearPreview() {
+    if (canPreviewLocations) {
+      setActiveSlug(null);
+    }
+  }
 
   return (
     <section className="location-browser" id="locations" aria-label="KN Media billboard locations">
@@ -40,11 +68,10 @@ export function LocationBrowser({ locations }: LocationBrowserProps) {
             href={`/locations/${location.slug}`}
             key={location.slug}
             aria-current={activeSlug === location.slug ? "true" : undefined}
-            onMouseEnter={() => setActiveSlug(location.slug)}
-            onFocus={() => setActiveSlug(location.slug)}
-            onMouseLeave={() => setActiveSlug(null)}
-            onBlur={() => setActiveSlug(null)}
-            onPointerDown={() => setActiveSlug(location.slug)}
+            onMouseEnter={() => previewLocation(location.slug)}
+            onFocus={() => previewLocation(location.slug)}
+            onMouseLeave={clearPreview}
+            onBlur={clearPreview}
           >
             <span
               className="location-mobile-image"

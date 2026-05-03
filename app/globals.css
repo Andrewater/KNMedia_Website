@@ -1385,6 +1385,12 @@ button {
     text-align: center;
   }
 
+  .preview-empty.is-muted {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
   .preview-hero-copy {
     justify-items: center;
     max-width: min(34rem, 100%);
