@@ -57,13 +57,6 @@ export function Header() {
           <Link href="/#locations">Locations</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
-          <div className="menu-sites">
-            {locations.map((location) => (
-              <Link key={location.slug} href={`/locations/${location.slug}`}>
-                {location.name}
-              </Link>
-            ))}
-          </div>
         </nav>
       </aside>
     </>

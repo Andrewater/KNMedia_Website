@@ -11,27 +11,12 @@ export default function AboutPage() {
     <main className="content-page" id="main">
       <section className="content-hero">
         <p className="kicker">About</p>
-        <h1>NZ’s Fasting Growing Street Billboard Company</h1>
+        <h1>NZ'S FASTEST GROWING OUTDOOR ADVERTISEMENT COMPANY</h1>
         <p>
           Framed, gallery-quality A0 posters hung exclusively in affluent, high-traffic locations across Auckland and
           Christchurch. No clutter. No cheap corners. Just premium physical media for brands that serve discerning
           customers.
         </p>
-      </section>
-
-      <section className="content-grid" aria-label="Company notes">
-        <article>
-          <h2>Framed</h2>
-          <p>Gallery-quality A0 placements designed to feel considered, physical, and premium.</p>
-        </article>
-        <article>
-          <h2>Selective</h2>
-          <p>Locations are chosen for affluent foot traffic, visibility, and brand context.</p>
-        </article>
-        <article>
-          <h2>Uncluttered</h2>
-          <p>No cheap corners, no visual noise, just media for brands serving discerning customers.</p>
-        </article>
       </section>
 
       <SiteFooter />

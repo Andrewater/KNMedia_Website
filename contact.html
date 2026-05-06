@@ -10,7 +10,7 @@
   <body>
     <header class="site-header">
       <a class="brand-logo" href="index.html" aria-label="KN Media home">
-        <img src="assets/img/kn-media-wordmark.svg" alt="KN Media">
+        <img src="assets/img/kn-media-logo-removebg.png" alt="KN Media" width="832" height="146">
       </a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
         <span></span>
@@ -37,11 +37,20 @@
             We are here to help. Fill out the form or reach out directly and the KN Media team will get back to you.
           </p>
           <div class="contact-list">
-            <a href="tel:+6281200000000">+62 812 0000 0000</a>
-            <a href="mailto:hello@knmedia.co.id">hello@knmedia.co.id</a>
+            <a href="tel:+64212532077">+64 21 253 2077</a>
+            <a href="mailto:kobe@knmedia.co.nz">kobe@knmedia.co.nz</a>
+            <a href="mailto:nic@knmedia.co.nz">nic@knmedia.co.nz</a>
           </div>
         </div>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="mailto:kobe@knmedia.co.nz?cc=nic@knmedia.co.nz" method="post" enctype="text/plain" data-contact-form>
+          <label>
+            Inquiry Type
+            <select name="inquiry-type" data-inquiry-select>
+              <option>Brand campaign</option>
+              <option>Location availability</option>
+              <option>Partnership</option>
+            </select>
+          </label>
           <div class="form-row">
             <label>
               First Name
@@ -62,19 +71,41 @@
               <input type="tel" name="phone" autocomplete="tel">
             </label>
           </div>
+          <div class="form-row">
+            <label>
+              Preferred Location
+              <select name="preferred-location" data-location-select>
+                <option value="">No preference yet</option>
+                <option>Benson Rd, Remuera</option>
+                <option>Osborne St, Newmarket</option>
+                <option>Orakei Bay Village, Orakei</option>
+                <option>Brougham St, Sydenham</option>
+              </select>
+            </label>
+            <label>
+              Ideal Start
+              <select name="ideal-start">
+                <option>As soon as available</option>
+                <option>This month</option>
+                <option>Next month</option>
+                <option>Planning ahead</option>
+              </select>
+            </label>
+          </div>
           <label>
-            Inquiry Type
-            <select name="inquiry-type">
-              <option>Brand campaign</option>
-              <option>Location availability</option>
-              <option>Partnership</option>
-              <option>Other</option>
+            Approximate Campaign Budget
+            <select name="campaign-budget">
+              <option>Still working it out</option>
+              <option>Under $2,500</option>
+              <option>$2,500 - $5,000</option>
+              <option>$5,000+</option>
             </select>
           </label>
           <label>
             Message
-            <textarea name="message" rows="6"></textarea>
+            <textarea name="message" rows="6" data-message-field placeholder="Tell us your campaign goal, timing, and any location preferences."></textarea>
           </label>
+          <p class="form-helper" data-form-helper>Choose an inquiry type and location to tailor the enquiry.</p>
           <button type="submit">Submit</button>
         </form>
       </section>
@@ -97,8 +128,9 @@
 
     <footer class="footer">
       <span>KN Media</span>
-      <span>Auckland & Christchurch, New Zealand</span>
-      <span>© 2026</span>
+      <a href="mailto:kobe@knmedia.co.nz">kobe@knmedia.co.nz</a>
+      <a href="mailto:nic@knmedia.co.nz">nic@knmedia.co.nz</a>
+      <span>&copy; 2026</span>
     </footer>
 
     <script src="assets/js/main.js" defer></script>

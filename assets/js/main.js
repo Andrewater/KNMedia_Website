@@ -4,6 +4,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const closeButtons = document.querySelectorAll("[data-close-menu]");
 const previewCards = document.querySelectorAll("[data-preview]");
 const previewLinks = document.querySelectorAll("[data-preview-target]");
+const contactForm = document.querySelector("[data-contact-form]");
 const firstPreviewLink = previewLinks[0];
 let selectedPreview = firstPreviewLink?.dataset.previewTarget || previewCards[0]?.dataset.preview;
 
@@ -14,7 +15,7 @@ function setMenu(open) {
   body.classList.toggle("menu-open", open);
 }
 
-menuToggle.addEventListener("click", () => setMenu(true));
+menuToggle?.addEventListener("click", () => setMenu(true));
 closeButtons.forEach((button) => {
   button.addEventListener("click", () => setMenu(false));
 });
@@ -57,3 +58,29 @@ previewLinks.forEach((link) => {
     showPreview(selectedPreview);
   });
 });
+
+if (contactForm) {
+  const inquirySelect = contactForm.querySelector("[data-inquiry-select]");
+  const locationSelect = contactForm.querySelector("[data-location-select]");
+  const messageField = contactForm.querySelector("[data-message-field]");
+  const formHelper = contactForm.querySelector("[data-form-helper]");
+
+  function syncContactForm() {
+    const selectedInquiry = inquirySelect?.value || "Brand campaign";
+    const selectedLocation = locationSelect?.value || "";
+
+    if (messageField && !messageField.value.trim()) {
+      messageField.placeholder = `${selectedInquiry}: tell us your campaign goal, timing, and what success looks like.`;
+    }
+
+    if (formHelper) {
+      formHelper.textContent = selectedLocation
+        ? `${selectedInquiry} enquiry for ${selectedLocation}. This will be sent to Kobe and Nic.`
+        : `${selectedInquiry} enquiry. Pick a location if you already have one in mind.`;
+    }
+  }
+
+  inquirySelect?.addEventListener("change", syncContactForm);
+  locationSelect?.addEventListener("change", syncContactForm);
+  syncContactForm();
+}

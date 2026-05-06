@@ -46,8 +46,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@type": "LocalBusiness",
     name: "KN Media",
     url: siteUrl,
-    email: "hello@knmedia.co.id",
-    telephone: "+642102831862",
+    email: "kobe@knmedia.co.nz",
+    telephone: "+64212532077",
     areaServed: ["Auckland", "Christchurch", "New Zealand"],
     serviceType: "Street billboard advertising",
   };

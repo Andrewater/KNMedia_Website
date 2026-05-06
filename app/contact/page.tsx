@@ -16,8 +16,9 @@ export default function ContactPage() {
           <h1 id="contact-title">Have a question?</h1>
           <p>We are here to help. Fill out the form or reach out directly and the KN Media team will get back to you.</p>
           <div className="contact-list">
-            <a href="tel:+642102831862">+64 210 283 1862</a>
-            <a href="mailto:hello@knmedia.co.id">hello@knmedia.co.id</a>
+            <a href="tel:+64212532077">+64 21 253 2077</a>
+            <a href="mailto:kobe@knmedia.co.nz">kobe@knmedia.co.nz</a>
+            <a href="mailto:nic@knmedia.co.nz">nic@knmedia.co.nz</a>
           </div>
         </div>
 

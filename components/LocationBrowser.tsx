@@ -47,8 +47,14 @@ export function LocationBrowser({ locations }: LocationBrowserProps) {
         <div className={`preview-empty ${activeSlug ? "is-muted" : ""}`}>
           <div className="preview-hero-copy">
             <p className="kicker">KN Media</p>
-            <h1>Premium billboards for New Zealand and Australian businesses.</h1>
-            <Link className="cta-button" href="/contact">Enquire now</Link>
+            <h1>
+              Premium Outdoor Advertising
+              <br />
+              for New Zealand
+              <br />
+              Businesses.
+            </h1>
+            <Link className="cta-button" href="/contact">Contact Now</Link>
           </div>
         </div>
         {locations.map((location) => (
@@ -59,7 +65,7 @@ export function LocationBrowser({ locations }: LocationBrowserProps) {
       <div className="location-list">
         <header className="location-list-header">
           <p className="kicker">Billboard locations</p>
-          <h2>Locations</h2>
+          <h2>Some of our work</h2>
           <p>Hover or tap a location to preview the placement.</p>
         </header>
         {locations.map((location) => (
@@ -83,7 +89,6 @@ export function LocationBrowser({ locations }: LocationBrowserProps) {
             <span className="location-copy">
               <span className="location-name">{location.name}</span>
               <span className="location-area">{location.area}</span>
-              <span className="location-near">{location.nearby.join(" / ")}</span>
             </span>
           </Link>
         ))}
