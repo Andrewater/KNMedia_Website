@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { LocationBrowser } from "@/components/LocationBrowser";
-import { LogoCarousel } from "@/components/LogoCarousel";
 import { SiteFooter } from "@/components/SiteFooter";
 import { locations } from "@/lib/locations";
 
@@ -8,7 +7,6 @@ export default function HomePage() {
   return (
     <main className="home-page" id="main">
       <LocationBrowser locations={locations} />
-      <LogoCarousel />
 
       <section className="contact-strip" id="contact" aria-labelledby="contact-title">
         <div className="contact-strip-copy">

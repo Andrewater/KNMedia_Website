@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "KN Helvetica";
-  src: url("/assets/fonts/Helvetica-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --red: #ff3131;
   --white: #ffffff;
@@ -14,8 +6,8 @@
   --muted: #707070;
   --line: rgba(21, 21, 21, 0.12);
   --nav-h: 84px;
-  --sans: "KN Helvetica", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --serif: "KN Helvetica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * {
